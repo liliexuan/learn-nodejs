@@ -6,7 +6,7 @@
     create : learn-nodejs/app.js
     create : learn-nodejs/routes
     create : learn-nodejs/routes/index.js
-    create : learn-nodejs/routes/users.js
+    create : learn-nodejs/routes/user.js
     create : learn-nodejs/views
     create : learn-nodejs/views/index.jade
     create : learn-nodejs/views/layout.jade
