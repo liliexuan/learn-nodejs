@@ -9,7 +9,7 @@ router.use(function (req, res, next) {
 
 /* GET  listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('index', {main: 'hello world' ,title: 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh' });
 });
 
 module.exports = router;
