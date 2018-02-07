@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+
+<head>
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <script data-main="/javascripts/app" src="/javascripts/lib/require.js"></script>
+</head>
+
+<body>
+  <div id="app">
     {{{body}}}
-  </body>
+    <el-button @click="visible = true">按钮</el-button>
+    <el-dialog :visible.sync="visible" title="Hello world">
+      <p>欢迎使用 Element</p>
+    </el-dialog>
+    <p>
+      <!-- 使用 router-link 组件来导航. -->
+      <!-- 通过传入 `to` 属性指定链接. -->
+      <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+      <router-link to="/foo">Go to Foo</router-link>
+      <router-link to="/bar">Go to Bar</router-link>
+    </p>
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
+  </div>
+</body>
+<script src="/javascripts/vue-router.js"></script>
+<script>
+  // 3. 创建 router 实例，然后传 `routes` 配置
+  // 你还可以传别的配置参数, 不过先这么简单着吧。
+  const router = new VueRouter({
+    routes // （缩写）相当于 routes: routes
+  })
+  var app = new Vue({
+    delimiters: ['${', '}'],
+    router: router,
+    data: {
+      message: 'Hello Vue!',
+      visible: false
+    }
+  }).$mount('#app');
+</script>
+
 </html>

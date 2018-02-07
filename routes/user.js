@@ -7,9 +7,17 @@ router.use(function (req, res, next) {
   next();
 });
 
+var obj = {
+  title: 'user',
+  object: {
+
+  }
+}
+
 /* GET  listing. */
 router.get('/', function(req, res, next) {
-  res.render('index', {main: 'hello world' ,title: 'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh' });
+  obj.object.main='node.js world';
+  res.render('index', obj);
 });
 
 module.exports = router;
