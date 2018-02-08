@@ -1,8 +1,7 @@
 // For any third party dependencies, like jQuery, place them in the lib folder.
 
 // Configure loading modules from the lib directory,except for 'app' ones, which are in a sibling directory.
-requirejs.config({
-    baseUrl: 'lib',
+require.config({
     paths: {
         app: '../app',
         jQuery: 'https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js',
@@ -13,4 +12,4 @@ requirejs.config({
 });
 
 // Start loading the main app file. Put all of your application logic in there.
-requirejs(['app/main']);
+require(['javascripts/app/main']);
